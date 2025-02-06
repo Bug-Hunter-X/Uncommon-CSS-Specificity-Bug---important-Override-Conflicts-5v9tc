@@ -1,0 +1,17 @@
+A better approach is to avoid `!important` and manage specificity properly:
+
+```css
+div {
+  font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+}
+
+div p {
+  font-size: 14px;
+}
+```
+
+This solution uses a more specific selector (`div p`) to correctly override the inherited styles and avoids the problematic `!important` flag.  It's crucial to understand CSS specificity and the cascade to ensure predictable styling behavior.  If you need even more control, consider using CSS preprocessors like Sass or Less to manage your styles more effectively.
